@@ -1,0 +1,41 @@
+name: Github Action FE
+
+# when to trigger this action
+on:
+  push:
+    branches: [ integration ]
+
+# what to do when triggered
+jobs:
+  # build and deploy the folder
+  build-deploy:
+    name: Build repo
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # steps to build and deploy 
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+      with:
+        fetch-depth: 0
+            
+    # cache the node modules folder so that build can be faster
+    - name: Cache node modules
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+#         restore-keys: |
+#           ${{ runner.os }}-node-
+    # use node js to build
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 10.x
+    
+    # install npm and build the app
+    - name: npm install and build
+      run: |
+        npm install
+        node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng  build --prod --outputPath html5 --source-map=false --base-href /flex/html5/ --deploy-url /flex/html5/
