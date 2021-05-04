@@ -34,6 +34,12 @@ jobs:
       with:
         node-version: 10.x
     
+    # run testcases
+    - name: Run testcases
+      run: |
+        npm test
+
+
     # install npm and build the app
     - name: npm install and build
       run: |
