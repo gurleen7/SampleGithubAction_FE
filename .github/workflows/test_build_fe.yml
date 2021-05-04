@@ -3,7 +3,7 @@ name: Github Action FE
 # when to trigger this action
 on:
   push:
-    branches: integration
+    branches: master
 
 # what to do when triggered
 jobs:
