@@ -50,7 +50,7 @@ jobs:
 
     - name: Lint
       run: npm run lint
-        working_directory: flex
+        working-directory: flex
       # with:
       #   path: flex
 
