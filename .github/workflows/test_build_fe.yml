@@ -45,7 +45,7 @@ jobs:
         npm test
 
     # install npm and build the app
-    - name: npm install and build
-      run: |
-        npm install
-        node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng  build --prod --outputPath html5 --source-map=false --base-href /flex/html5/ --deploy-url /flex/html5/
+    # - name: npm install and build
+    #   run: |
+    #     npm install
+    #     node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng  build --prod --outputPath html5 --source-map=false --base-href /flex/html5/ --deploy-url /flex/html5/
