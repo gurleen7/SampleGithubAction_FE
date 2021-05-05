@@ -19,6 +19,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
+        path: flex
       
             
     # cache the node modules folder so that build can be faster
@@ -40,9 +41,7 @@ jobs:
     # install npm
     #ADD
     - name: npm install
-      run: |
-          echo "$PATH"
-          npm install
+      run: npm install
 
 
     #ADD
@@ -50,9 +49,8 @@ jobs:
       run: npm i puppeteer
 
     - name: Lint
-      run: |
-          echo "$PATH"
-          npm run lint
+      run: npm run lint
+        working_directory: flex
       # with:
       #   path: flex
 
