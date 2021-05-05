@@ -42,10 +42,10 @@ jobs:
     # run testcases
     - name: Run testcases
       run: |
-        npm test --no-watch --no-progress --browsers=ChromeHeadlessCI
+        npm test
 
     # install npm and build the app
     # - name: npm install and build
-    #   run: |
+    #   run: |  --no-watch --no-progress --browsers=ChromeHeadlessCI
     #     npm install
     #     node --max_old_space_size=8000 ./node_modules/@angular/cli/bin/ng  build --prod --outputPath html5 --source-map=false --base-href /flex/html5/ --deploy-url /flex/html5/
