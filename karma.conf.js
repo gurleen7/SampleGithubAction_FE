@@ -25,27 +25,34 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
+    // customLaunchers: {
+    //     ChromeWithoutSecurity: {
+    //         base: 'Chrome',
+    //         flags: [ '--disable-web-security' ]
+    //     },
+    //     IE9: {
+    //         base: 'IE',
+    //         'x-ua-compatible': 'IE=EmulateIE9'
+    //     },
+    //     IE10: {
+    //         base: 'IE',
+    //         'x-ua-compatible': 'IE=EmulateIE10'
+    //     },
+    //     FirefoxHeadless: {
+    //         base: 'Firefox',
+    //         flags: [ '-headless' ]
+    //     },
+    //     OperaHeadless: {
+    //         base: 'Opera',
+    //         flags: [ '-headless' ]
+    //     }
+    // },
+    browsers: ['Chrome', 'Chrome_without_security'], // You may use 'ChromeCanary', 'Chromium' or any other supported browser
     customLaunchers: {
-        ChromeWithoutSecurity: {
-            base: 'Chrome',
-            flags: [ '--disable-web-security' ]
-        },
-        IE9: {
-            base: 'IE',
-            'x-ua-compatible': 'IE=EmulateIE9'
-        },
-        IE10: {
-            base: 'IE',
-            'x-ua-compatible': 'IE=EmulateIE10'
-        },
-        FirefoxHeadless: {
-            base: 'Firefox',
-            flags: [ '-headless' ]
-        },
-        OperaHeadless: {
-            base: 'Opera',
-            flags: [ '-headless' ]
-        }
+      Chrome_without_security: {
+        base: 'Chrome',
+        flags: ['--disable-web-security', '--disable-site-isolation-trials']
+      }
     },
     singleRun: false,
     restartOnFileChange: true
