@@ -17,9 +17,9 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-      path: flex
       with:
         fetch-depth: 0
+        path: flex
             
     # cache the node modules folder so that build can be faster
     #ADD
