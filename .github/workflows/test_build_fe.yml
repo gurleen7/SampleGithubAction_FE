@@ -20,8 +20,6 @@ jobs:
       with:
         fetch-depth: 0
         path: flex
-      shell: bash
-      run: echo "$PATH"
             
     # cache the node modules folder so that build can be faster
     #ADD
@@ -42,7 +40,9 @@ jobs:
     # install npm
     #ADD
     - name: npm install
-      run: npm install
+      run: |
+          echo "$PATH"
+          npm install
 
 
     #ADD
@@ -50,7 +50,9 @@ jobs:
       run: npm i puppeteer
 
     - name: Lint
-      run: npm run lint
+      run: |
+          echo "$PATH"
+          npm run lint
       with:
         path: flex
 
