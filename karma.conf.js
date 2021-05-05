@@ -47,13 +47,13 @@ module.exports = function (config) {
     //         flags: [ '-headless' ]
     //     }
     // },
-    browsers: ['Chrome', 'Chrome_without_security'], // You may use 'ChromeCanary', 'Chromium' or any other supported browser
-    customLaunchers: {
-      Chrome_without_security: {
-        base: 'Chrome',
-        flags: ['--disable-web-security', '--disable-site-isolation-trials']
-      }
-    },
+    browsers: ['ChromeHeadless'],//'Chrome', 'Chrome_without_security'], // You may use 'ChromeCanary', 'Chromium' or any other supported browser
+    // customLaunchers: {
+    //   Chrome_without_security: {
+    //     base: 'Chrome',
+    //     flags: ['--disable-web-security', '--disable-site-isolation-trials']
+    //   }
+    // },
     singleRun: false,
     restartOnFileChange: true
   });
