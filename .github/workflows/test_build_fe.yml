@@ -35,7 +35,7 @@ jobs:
         node-version: 10.x
 
     # install npm
-    - name: npm install and build
+    - name: npm install
       run: |
         npm install
 
@@ -44,7 +44,7 @@ jobs:
 
     - name: Test
       run: npm test -- --configuration=ci
-      
+
     - name: Build
       run: npm run build -- --prod
     
