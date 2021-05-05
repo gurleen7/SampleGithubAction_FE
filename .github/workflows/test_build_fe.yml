@@ -42,7 +42,7 @@ jobs:
     # run testcases
     - name: Run testcases
       run: |
-        npm test
+        npm test --no-watch --no-progress --browsers=ChromeHeadlessCI
 
     # install npm and build the app
     # - name: npm install and build
