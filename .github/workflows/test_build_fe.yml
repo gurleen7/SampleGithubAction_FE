@@ -41,11 +41,13 @@ jobs:
     # install npm
     #ADD
     - name: npm install
+      working-directory: flex
       run: npm install
 
 
     #ADD
     - name: Install puppeteer for test step
+      working-directory: flex
       run: npm i puppeteer
 
     - name: Lint
@@ -57,11 +59,13 @@ jobs:
 
       #ADD
     - name: Test
+      working-directory: flex
       run: npm test -- --configuration=ci_test
       # with:
       #   path: flex
 
     - name: Build
+      working-directory: flex
       run: npm run build -- --prod
       # with:
       #   path: flex
