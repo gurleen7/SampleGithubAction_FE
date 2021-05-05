@@ -25,7 +25,28 @@ module.exports = function (config) {
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
-    browsers: ['Chrome'],
+    customLaunchers: {
+        ChromeWithoutSecurity: {
+            base: 'Chrome',
+            flags: [ '--disable-web-security' ]
+        },
+        IE9: {
+            base: 'IE',
+            'x-ua-compatible': 'IE=EmulateIE9'
+        },
+        IE10: {
+            base: 'IE',
+            'x-ua-compatible': 'IE=EmulateIE10'
+        },
+        FirefoxHeadless: {
+            base: 'Firefox',
+            flags: [ '-headless' ]
+        },
+        OperaHeadless: {
+            base: 'Opera',
+            flags: [ '-headless' ]
+        }
+    },
     singleRun: false,
     restartOnFileChange: true
   });
