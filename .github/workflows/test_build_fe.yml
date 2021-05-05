@@ -17,10 +17,12 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
+      path: flex
       with:
         fetch-depth: 0
             
     # cache the node modules folder so that build can be faster
+    #ADD
     - name: Cache node modules
       uses: actions/cache@v1
       with:
@@ -29,23 +31,26 @@ jobs:
 #         restore-keys: |
 #           ${{ runner.os }}-node-
     # use node js to build
+    #ADD
     - name: Use Node.js
       uses: actions/setup-node@v1
       with:
         node-version: 10.x
 
     # install npm
+    #ADD
     - name: npm install
-      run: |
-        npm install
+      run: npm install
 
+
+    #ADD
     - name: Install puppeteer for test step
-      run: |
-        npm i puppeteer
+      run: npm i puppeteer
 
     - name: Lint
       run: npm run lint
 
+      #ADD
     - name: Test
       run: npm test -- --configuration=ci_test
 
