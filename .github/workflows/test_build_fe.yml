@@ -49,8 +49,9 @@ jobs:
       run: npm i puppeteer
 
     - name: Lint
+      working-directory: flex
       run: npm run lint
-        working-directory: flex
+      
       # with:
       #   path: flex
 
