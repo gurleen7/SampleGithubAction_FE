@@ -24,36 +24,14 @@ module.exports = function (config) {
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
-    autoWatch: false,
-    // customLaunchers: {
-    //     ChromeWithoutSecurity: {
-    //         base: 'Chrome',
-    //         flags: [ '--disable-web-security' ]
-    //     },
-    //     IE9: {
-    //         base: 'IE',
-    //         'x-ua-compatible': 'IE=EmulateIE9'
-    //     },
-    //     IE10: {
-    //         base: 'IE',
-    //         'x-ua-compatible': 'IE=EmulateIE10'
-    //     },
-    //     FirefoxHeadless: {
-    //         base: 'Firefox',
-    //         flags: [ '-headless' ]
-    //     },
-    //     OperaHeadless: {
-    //         base: 'Opera',
-    //         flags: [ '-headless' ]
-    //     }
-    // },
-    browsers: ['ChromeHeadless'],//'Chrome', 'Chrome_without_security'], // You may use 'ChromeCanary', 'Chromium' or any other supported browser
-    // customLaunchers: {
-    //   Chrome_without_security: {
-    //     base: 'Chrome',
-    //     flags: ['--disable-web-security', '--disable-site-isolation-trials']
-    //   }
-    // },
+     autoWatch: true,
+    browsers: ['Chrome'],
+    customLaunchers: {
+      ChromeHeadlessCI: {
+        base: 'ChromeHeadless',
+        flags: ['--no-sandbox', '--disable-gpu']
+      }
+    },
     singleRun: false,
     restartOnFileChange: true
   });

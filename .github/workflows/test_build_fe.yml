@@ -39,11 +39,12 @@ jobs:
       run: |
         npm install
 
-    # run testcases
-    - name: Run testcases
-      run: |
-        npm test --watch=false --browsers=ChromeHeadless
-
+    - name: Lint
+      run: npm run lint
+    - name: Build
+      run: npm run build -- --prod
+    - name: Test
+      run: npm test -- --configuration=ci
     # install npm and build the app
     # - name: npm install and build
     #   run: |  --no-watch --no-progress --browsers=ChromeHeadlessCI
