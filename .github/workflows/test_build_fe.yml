@@ -53,8 +53,8 @@ jobs:
       run: |
           echo "$PATH"
           npm run lint
-      with:
-        path: flex
+      # with:
+      #   path: flex
 
       #ADD
     - name: Test
