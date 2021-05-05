@@ -97,7 +97,7 @@
             "scripts": []
           },
         "configurations": {
-            "ci": {
+            "ci_test": {
               "watch": false,
               "progress": false,
               "browsers": "ChromeHeadlessCI"

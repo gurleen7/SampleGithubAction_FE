@@ -39,11 +39,15 @@ jobs:
       run: |
         npm install
 
+    - name: Install puppeteer for test step
+      run: |
+        npm i puppeteer
+
     - name: Lint
       run: npm run lint
 
     - name: Test
-      run: npm test -- --configuration=ci
+      run: npm test -- --configuration=ci_test
 
     - name: Build
       run: npm run build -- --prod
