@@ -49,19 +49,19 @@ jobs:
 
     - name: Lint
       run: npm run lint
-      with:
-        path: flex
+      # with:
+      #   path: flex
 
       #ADD
     - name: Test
       run: npm test -- --configuration=ci_test
-      with:
-        path: flex
+      # with:
+      #   path: flex
 
     - name: Build
       run: npm run build -- --prod
-      with:
-        path: flex
+      # with:
+      #   path: flex
     
     # install npm and build the app
     # - name: npm install and build
