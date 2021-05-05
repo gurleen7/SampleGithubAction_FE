@@ -17,11 +17,11 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-      shell: bash
-      run: echo "$PATH"
       with:
         fetch-depth: 0
         path: flex
+      shell: bash
+      run: echo "$PATH"
             
     # cache the node modules folder so that build can be faster
     #ADD
